@@ -1,3 +1,86 @@
 {
-    "aries":"../img/aries.png"
+    "aries": {
+        "name": "Овен",
+        "image": "https://img.icons8.com/?size=100&id=gL5s6A8joRS4&format=png&color=000000",
+        "dates":"21 марта – 20 апреля"
+    },
+    "taurus": {
+        "name": "Телец",
+        "image": "https://img.icons8.com/?size=100&id=Z8ZCXfrKRQcs&format=png&color=000000",
+        "dates": "21 апреля – 21 мая"
+
+    },
+    "gemini":{
+        "name": "Близнецы",
+        "image": " https://img.icons8.com/?size=100&id=J4XtkPQcGE8d&format=png&color=000000",
+        "dates": "22 мая – 21 июня"
+
+    },
+
+    "cancer":{
+        "name": "Рак",
+        "image": "https://img.icons8.com/?size=100&id=KkdAiaN1W0v6&format=png&color=000000",
+        "dates": "22 июня – 22 июля"
+
+
+
+    },
+
+    "leo": {
+        "name": "Лев",
+        "image": "https://img.icons8.com/?size=100&id=M2rgmd0ViAy6&format=png&color=000000",
+        "dates": "23 июля – 21 августа"
+
+
+    },
+    "virgo":{
+        "name": "Дева",
+        "image": "https://img.icons8.com/?size=100&id=sf4nM5RHKnnG&format=png&color=000000",
+        "dates": "22 августа – 23 сентября"
+
+
+    },
+    "libra":{
+        "name": "Весы",
+        "image": "https://img.icons8.com/?size=100&id=0Nn1pvJMGZOt&format=png&color=000000",
+        "dates": "24 сентября – 23 октября"
+
+
+    },
+    "scorpio":{
+        "name": "Скорпион",
+        "image": "https://img.icons8.com/?size=100&id=vPgEhpjtaONT&format=png&color=000000",
+        "dates": "24 октября – 22 ноября"
+
+
+    },
+    "sagittarius":{
+        "name": "Стрелец",
+        "image": "https://img.icons8.com/?size=100&id=iO9e7ntYlGpR&format=png&color=000000",
+        "dates": "23 ноября – 22 декабря"
+
+
+    },
+    "capricorn":{
+        "name": "Козерог",
+        "image": "https://img.icons8.com/?size=100&id=o8XzaTMcjqPG&format=png&color=000000",
+        "dates": "23 декабря – 20 января"
+
+
+    },
+    "aquarius":{
+        "name": "Водолей",
+        "image": "https://img.icons8.com/?size=100&id=aPzXjp3KQGH4&format=png&color=000000",
+        "dates": "21 января – 19 февраля"
+
+
+    },
+    "pisces":{
+        "name": "Рыба",
+        "image": "https://img.icons8.com/?size=100&id=3ar9cBV0LDNz&format=png&color=000000",
+        "dates": "20 февраля – 20 марта"
+
+
+    }
+
 }

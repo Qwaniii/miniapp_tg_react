@@ -4,6 +4,8 @@ import { useTelegram } from './hooks/useTelegram';
 import Header from './components/Header/Header';
 import api from './utils/Api';
 import List from './components/List/List';
+import { Route, Routes } from 'react-router-dom';
+import Main from './components/Main/Main';
 
 function App() {
 
@@ -37,7 +39,11 @@ function App() {
     <div className="App">
 
       <Header/>
-      <List zodiak={zodiak}/>
+      <Routes>
+        <Route index element={<List zodiak={zodiak}/>}/>
+        <Route path={"/horo/:signName"} element={<Main zodiak={zodiak} />}/>
+      </Routes>
+
     </div>
   );
 }
