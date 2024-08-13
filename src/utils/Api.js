@@ -5,24 +5,27 @@ const onResponce = (res) => {
   
   const config = {
     dataUrl: "http://5.35.90.171:61011/get_horoscope/",
-    headers: {
-      "Content-Type": "application/json",
-    },
   };
   
   class Api {
-    constructor({ dataUrl, headers, freshToken }) {
+    constructor({ dataUrl }) {
       this._dataUrl = dataUrl;
-      this._headers = headers;
     }
     
   
     //Получение постов
   
-    getGoroscope(data) {
-        return fetch(`${this._dataUrl}/posts`, {
+    getGoroscope(sing,lang) {
+        return fetch(`${this._dataUrl}`, {
+          mode: "no-cors",
           method: "POST",
-          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json"
+        },
+          body: JSON.stringify({
+            "sign": "aries",
+            "language": "original"
+        }),
         }).then(onResponce);
       };
     }

@@ -8,19 +8,25 @@ function App() {
 
   const {tg} = useTelegram()
 
+  const horo = {
+    "language": "original"
+  }
 
   useEffect( () => {
     tg.ready();
-    api.getGoroscope(horo).then(data) => {
+  }, [])
+
+  useEffect (() => {
+    api.getGoroscope().then((data) => {
       console.log(data)
-    }
+    })
   }, [])
 
 
 
   return (
     <div className="App">
-      
+
       <Header/>
     </div>
   );
