@@ -9,13 +9,20 @@ export function useTelegram() {
         tg.close()
     }
 
+    let langTg = tg.initDataUnsafe?.user?.language_code
+
+    const changeLanguage = () => {
+        langTg = !langTg
+    }
+
 
 
     return {
         onClose,
         tg,
+        langTg,
+        changeLanguage,
         user: tg.initDataUnsafe?.user,
-        lang: tg.initDataUnsafe?.user?.language_code,
         back: tg.BackButton
     }
 }

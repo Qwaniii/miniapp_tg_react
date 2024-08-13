@@ -11,11 +11,11 @@ function App() {
 
   const [zodiak, setZodiak] = useState({})
 
-  const {tg, lang} = useTelegram()
+  const {tg, langTg} = useTelegram()
 
   let horo ={}
 
-  lang === "ru" 
+  langTg === "ru" 
   ? horo = 
     {
       "language": "original"

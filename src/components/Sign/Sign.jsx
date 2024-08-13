@@ -7,7 +7,7 @@ import { useTelegram } from '../../hooks/useTelegram';
 
 const Sign = ({znak}) => {
 
-    const {lang} = useTelegram()
+    const {langTg} = useTelegram()
 
     let srcImg
     let srcName
@@ -16,7 +16,7 @@ const Sign = ({znak}) => {
     for (let key in db) {
         if (znak === key) {
             srcImg = db[key]?.image
-            lang === "ru" ? srcName = db[key]?.name : srcName = znak[0].toUpperCase() + znak.slice(1, znak.length)
+            langTg === "ru" ? srcName = db[key]?.name : srcName = znak[0].toUpperCase() + znak.slice(1, znak.length)
             srcDate = db[key]?.dates
         }
     }
