@@ -5,7 +5,11 @@ import './Header.css'
 
 const Header = () => {
 
-    const {user, onClose} = useTelegram()
+    const {user, onClose, back} = useTelegram()
+
+    const backBt = () => {
+        back.onClick()
+    }
 
     return (
        <div className={'header'}>
@@ -13,6 +17,7 @@ const Header = () => {
         <span className={'username'}>
             {user?.username}
         </span>
+        <Button onClick={backBt} >Назад</Button>
        </div>
     )
 };

@@ -2,9 +2,12 @@ import React from 'react';
 import './Sign.css'
 import db from '../../DB.json' 
 import { Link } from 'react-router-dom';
+import { useTelegram } from '../../hooks/useTelegram';
 
 
 const Sign = ({znak}) => {
+
+    const {lang} = useTelegram()
 
     let srcImg
     let srcName
@@ -13,7 +16,7 @@ const Sign = ({znak}) => {
     for (let key in db) {
         if (znak === key) {
             srcImg = db[key]?.image
-            srcName = db[key]?.name
+            lang === "ru" ? srcName = db[key]?.name : srcName = znak[0].toUpperCase() + znak.slice(1, znak.length)
             srcDate = db[key]?.dates
         }
     }

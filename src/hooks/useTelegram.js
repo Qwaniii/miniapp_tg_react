@@ -9,10 +9,13 @@ export function useTelegram() {
         tg.close()
     }
 
+
+
     return {
         onClose,
         tg,
         user: tg.initDataUnsafe?.user,
-        lang: tg.initDataUnsafe?.user?.language_code
+        lang: tg.initDataUnsafe?.user?.language_code,
+        back: tg.BackButton
     }
 }
