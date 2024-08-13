@@ -13,7 +13,9 @@ const List = ({zodiak}) => {
             {arrZodiak.map((znak) => (
                 <Sign znak={znak}/>
             ))}
-            <image  className={'img'} src="../../img/aries.png"></image>
+            <div className='aaa'>
+            <img  className={'img'} src="../../img/aries.png"></img>
+            </div>
        </div>
     )
 };
