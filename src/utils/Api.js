@@ -3,9 +3,7 @@ const onResponce = (res) => {
   };
   
   
-  const config = {
-    dataUrl: "http://5.35.90.171:61011/get_horoscope/",
-  };
+
   
   class Api {
     constructor({ dataUrl }) {
@@ -15,20 +13,20 @@ const onResponce = (res) => {
   
     //Получение постов
   
-    getGoroscope(sing,lang) {
+    getGoroscope(data) {
         return fetch(`${this._dataUrl}`, {
-          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json"
         },
-          body: JSON.stringify({
-            "sign": "aries",
-            "language": "original"
-        }),
+          body: JSON.stringify(data),
         }).then(onResponce);
       };
-    }
+  }
+
+  const config = {
+    dataUrl: "https://poker247tech.ru/get_horoscope/",
+  };
 
     const api = new Api(config);
 

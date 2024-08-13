@@ -12,7 +12,7 @@ export function useTelegram() {
     return {
         onClose,
         tg,
-        user: tg.initDataUnsafe?.user
-
+        user: tg.initDataUnsafe?.user,
+        lang: tg.initDataUnsafe?.user?.language_code
     }
 }
