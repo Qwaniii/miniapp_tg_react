@@ -5,7 +5,7 @@ import './Header.css'
 import { useNavigate } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({changeLanguage}) => {
 
     const {user, onClose, back, langTg} = useTelegram()
 
@@ -23,7 +23,7 @@ const Header = () => {
             {langTg}
         </span>
         <Button onClick={backBt} >Назад</Button>
-        <Button onClick={() => console.log(langTg)} >Сменить языка</Button>
+        <Button onClick={changeLanguage} >Сменить языка</Button>
        </div>
     )
 };

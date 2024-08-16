@@ -9,24 +9,24 @@ import Main from './components/Main/Main';
 
 function App() {
   
-  const {tg, langTg} = useTelegram()
+  const {tg} = useTelegram()
   const [zodiak, setZodiak] = useState({})
-  const [defaultLang, setDefaultLang] = useState(langTg)
+  const [horo, setHoro] = useState({            
+                                    "language": "original",
+                                    "period": "today"
+                                  })
+
+  const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code)
 
 
-  let horo ={}
-
-  defaultLang === "ru" 
-        ? horo = 
-          {
-            "language": "original",
-            "period": "today"
-          }
-        :
-          horo = {
-            "language": "translated",
-            "period": "today"
-          }
+  useEffect(() => {
+    if(langTg !== "ru") {
+      setHoro({
+                "language": "translated",
+                "period": "today"
+              })
+            }
+    }, [langTg])
   
 
   useEffect( () => {
@@ -35,18 +35,21 @@ function App() {
   }, [])
 
 
-  useEffect( () => {
-    setDefaultLang(langTg)
-  }, [langTg])
+  const changeLanguage = () => {
+    if (langTg === "ru") {
+        setLangTg("en")
+    }
+    else setLangTg("ru")
+}
 
 
 
   return (
     <div className="App">
 
-      <Header defaultLang={defaultLang}/>
+      <Header changeLanguage={changeLanguage}/>
       <Routes>
-        <Route index element={<List zodiak={zodiak} defaultLang={defaultLang}/>}/>
+        <Route index element={<List zodiak={zodiak}/>}/>
         <Route path={"/horo/:signName"} element={<Main zodiak={zodiak} />}/>
       </Routes>
 
