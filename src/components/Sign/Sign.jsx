@@ -18,7 +18,7 @@ const Sign = ({znak, langTg}) => {
                 langTg === "ru" ? setSrcName(db[key]?.name) : setSrcName(znak[0].toUpperCase() + znak.slice(1, znak.length))
                 setSrcDate(db[key]?.dates)
             }
-    }}, [znak])
+    }}, [langTg])
 
     return (
        <div >

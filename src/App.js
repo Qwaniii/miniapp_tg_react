@@ -16,7 +16,7 @@ function App() {
                                     "period": "today"
                                   })
 
-  const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code)
+  const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code || "ru")
 
 
   useEffect(() => {
@@ -26,17 +26,19 @@ function App() {
                 "period": "today"
               })
             }
-            else setHoro(({
-              "language": "original",
-              "period": "today"
-            }))
+    else {
+      setHoro({
+      "language": "original",
+      "period": "today"
+    })
+  }
     }, [langTg])
   
 
   useEffect( () => {
     tg.ready();
     api.getGoroscope(horo).then(data => setZodiak(data.horoscope))
-  }, [langTg])
+  }, [horo])
 
 
   const changeLanguage = () => {
