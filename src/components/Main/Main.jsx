@@ -8,8 +8,6 @@ const Main = ({zodiak}) => {
     const idName = useParams()
     let option
     
-    console.log(idName)
-
     for (let key in zodiak) {
         if (idName.signName === key) {
             option = zodiak[key]
