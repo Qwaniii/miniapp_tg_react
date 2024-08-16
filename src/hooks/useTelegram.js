@@ -12,10 +12,11 @@ export function useTelegram() {
     let langTg = tg.initDataUnsafe?.user?.language_code
 
     const changeLanguage = () => {
-        if (langTg === "ru") {
-            langTg = "en"
-        }
-        else langTg = "ru"
+        // if (langTg === "ru") {
+        //     langTg = "en"
+        // }
+        // else langTg = "ru"
+        console.log(langTg)
     }
 
 

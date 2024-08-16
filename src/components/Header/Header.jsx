@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
-    const {user, onClose, back, changeLanguage} = useTelegram()
+    const {user, onClose, back, langTg} = useTelegram()
 
     let navigate = useNavigate()
 
@@ -20,9 +20,10 @@ const Header = () => {
         <Button onClick={onClose}>Закрыть</Button>
         <span className={'username'}>
             {user?.username}
+            {langTg}
         </span>
         <Button onClick={backBt} >Назад</Button>
-        <Button onClick={changeLanguage} >Сменить языка</Button>
+        <Button onClick={() => console.log(langTg)} >Сменить языка</Button>
        </div>
     )
 };
