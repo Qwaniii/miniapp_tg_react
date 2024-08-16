@@ -3,6 +3,7 @@
     height: 50px;
     display: flex;
     align-items: center;
+    gap: 5px;
     padding: 0 20px;
 }
 

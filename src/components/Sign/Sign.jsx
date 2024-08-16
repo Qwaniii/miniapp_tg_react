@@ -1,25 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Sign.css'
 import db from '../../DB.json' 
 import { Link } from 'react-router-dom';
-import { useTelegram } from '../../hooks/useTelegram';
 
 
-const Sign = ({znak, defaultLang}) => {
+const Sign = ({znak, langTg}) => {
 
-    const {langTg} = useTelegram()
 
-    let srcImg
-    let srcName
-    let srcDate
+    const [srcImg, setSrcImg] = useState()
+    const [srcName, setSrcName] = useState()
+    const [srcDate, setSrcDate] = useState()
 
-    for (let key in db) {
-        if (znak === key) {
-            srcImg = db[key]?.image
-            defaultLang === "ru" ? srcName = db[key]?.name : srcName = znak[0].toUpperCase() + znak.slice(1, znak.length)
-            srcDate = db[key]?.dates
-        }
-    }
+    useEffect(() => {
+        for (let key in db) {
+            if (znak === key) {
+                setSrcImg(db[key]?.image)
+                langTg === "ru" ? setSrcName(db[key]?.name) : setSrcName(znak[0].toUpperCase() + znak.slice(1, znak.length))
+                setSrcDate(db[key]?.dates)
+            }
+    }}, [znak])
 
     return (
        <div >

@@ -26,13 +26,17 @@ function App() {
                 "period": "today"
               })
             }
+            else setHoro(({
+              "language": "original",
+              "period": "today"
+            }))
     }, [langTg])
   
 
   useEffect( () => {
     tg.ready();
-    api.getGoroscope(horo).then(data => setZodiak (data.horoscope))
-  }, [])
+    api.getGoroscope(horo).then(data => setZodiak(data.horoscope))
+  }, [langTg])
 
 
   const changeLanguage = () => {
@@ -49,7 +53,7 @@ function App() {
 
       <Header changeLanguage={changeLanguage}/>
       <Routes>
-        <Route index element={<List zodiak={zodiak}/>}/>
+        <Route index element={<List zodiak={zodiak} langTg={langTg}/>}/>
         <Route path={"/horo/:signName"} element={<Main zodiak={zodiak} />}/>
       </Routes>
 
