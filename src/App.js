@@ -20,6 +20,7 @@ function App() {
 
 
   useEffect(() => {
+    tg.ready();
     if(langTg !== "ru") {
       setHoro({
                 "language": "translated",
