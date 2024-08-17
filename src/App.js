@@ -11,12 +11,17 @@ function App() {
   
   const {tg} = useTelegram()
   const [zodiak, setZodiak] = useState({})
-  const [horo, setHoro] = useState({
-                    "language": "translated",
-                "period": "today"
-  })
-
   const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code)
+  const [horo, setHoro] = useState(tg.initDataUnsafe?.user?.language_code !== "ru" ? {
+                "language": "translated",
+                "period": "today"
+                }:
+                {
+                  "language": "original",
+                  "period": "today"
+                  }
+              )
+
 
 
   useEffect(() => {
@@ -39,7 +44,7 @@ function App() {
   useEffect( () => {
     tg.ready();
     api.getGoroscope(horo).then(data => setZodiak(data.horoscope))
-  }, [langTg])
+  }, [horo])
 
 
   const changeLanguage = () => {
