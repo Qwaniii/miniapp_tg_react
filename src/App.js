@@ -42,6 +42,7 @@ function App() {
   
 
   useEffect( () => {
+    setLangTg(tg.initDataUnsafe?.user?.language_code)
     tg.ready();
     api.getGoroscope(horo).then(data => setZodiak(data.horoscope))
   }, [horo])
