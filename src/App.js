@@ -16,7 +16,7 @@ function App() {
                                     "period": "today"
                                   })
 
-  const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code || "ru")
+  const [langTg, setLangTg] = useState(tg.initDataUnsafe?.user?.language_code)
 
 
   useEffect(() => {
